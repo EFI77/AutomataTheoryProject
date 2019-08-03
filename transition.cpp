@@ -1,4 +1,4 @@
-#include "Transition.h"
+#include "transition.h"
 
 
 Transition::Transition()
@@ -29,3 +29,10 @@ std::string Transition::getCond()
     return this->cond;
 }
 
+void Transition::draw(QPainter * painter)
+{
+    painter->drawLine
+            (this->to->getx(), this->to->gety(),
+             this->from->getx(), this->from->gety());
+//    painter->drawText(QPointF(x - 4, y + 3), this->name.c_str());
+}

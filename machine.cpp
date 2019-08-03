@@ -21,6 +21,13 @@ void Machine::setStart(State * state)
 {
     startState = state;
 }
+
+void Machine::setFinal(State * state)
+{
+    finalState=state;
+    finalState->setFinal(true);
+}
+
 Machine::Machine()
 {
 }

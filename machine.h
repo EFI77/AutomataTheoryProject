@@ -1,8 +1,8 @@
 #ifndef MACHINE_H
 #define MACHINE_H
 #include <vector>
-#include "State.h"
-#include "Transition.h"
+#include "state.h"
+#include "transition.h"
 
 
 class Machine
@@ -12,6 +12,7 @@ protected:
     std::vector<Transition> transitions;
 
     State * startState;
+    State * finalState;
 
 public:
     Machine();
@@ -23,8 +24,10 @@ public:
     void addState(State);
     void removeState(State*);
     void setStart(State*);
+    void setFinal(State *);
     virtual void addTransition(Transition) = 0;
     virtual void removeTransition(Transition*) = 0;
+    virtual bool calc(std::string)=0;
 
 };
 

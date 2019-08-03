@@ -1,21 +1,21 @@
-#ifndef DFA_H
-#define DFA_H
+#ifndef TURING_H
+#define TURING_H
 #include "machine.h"
 
-class DfaMachine :
+
+class TuringMachine :
     public Machine
 {
-
 public:
-    DfaMachine();
-    virtual ~DfaMachine();
+    TuringMachine();
+    virtual ~TuringMachine();
+
 
     void addTransition(Transition) override;
     void removeTransition(Transition*) override;
 
     virtual bool calc(std::string input)override;
+
 };
 
-#endif // DFA_H
-
-
+#endif // TURING_H
